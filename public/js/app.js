@@ -10564,7 +10564,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.button__form[data-v-e0422746] {\n    margin-top: 35%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.button__link[data-v-e0422746] {\n    margin-top: 100px;\n    margin-left: 40px;\n    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);\n    background-color: white;\n    color: black;\n    border: 2px solid #4CAF50; /* Green */\n    transition-duration: 0.4s;\n}\n.button__link[data-v-e0422746]:hover {\n    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);\n    background-color: #4CAF50; /* Green */\n    color: white;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28630,7 +28630,7 @@ var render = function () {
         _c(
           "button",
           {
-            staticClass: "button__form btn btn-secondary align-middle",
+            staticClass: "button__link btn btn-secondary align-middle",
             on: {
               click: function ($event) {
                 return _vm.goToTest()
