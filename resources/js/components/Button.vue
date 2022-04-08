@@ -1,23 +1,20 @@
 <template>
     <div class="button">
-        <router-link :to="test">
             <button class="button__link btn btn-secondary align-middle"
                     @click="goToTest()">
                 Go to "Test" page
             </button>
-        </router-link>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'Button-test',
         data() {
             return {
                 testLink: 'test'
             };
         },
-        computed: {
+        Methods: {
             goToTest() {
                 window.location.href = "test";
             }
