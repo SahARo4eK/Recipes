@@ -5430,6 +5430,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -5451,7 +5453,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {};
+  },
+  methods: {
+    goHome: function goHome() {
+      window.location.href = "/";
+    }
+  }
+});
 
 /***/ }),
 
@@ -10599,7 +10613,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.content[data-v-7f310169] {\n        flex: 1;\n        background-color: black;\n\theight: 100%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.content[data-v-7f310169] {\n    flex: 1;\n    background-color: lightslategrey;\n    height: 100%;\n    min-height: 150px;\n    min-width: 200px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -10623,7 +10637,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.footer[data-v-469e941a] {\n    flex: 1;\n    max-height: 6em;\n    background-color: lightsalmon;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.footer[data-v-469e941a] {\n    flex: 1;\n    max-height: 6em;\n    background-color: lightsalmon;\n}\n.footer__information[data-v-469e941a] {\n    margin: 1.5em;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -10647,7 +10661,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar[data-v-21720cd0] {\n        flex: 1;\n        border-radius: 0px;\n        top: 0;\n        left: 0;\n        right: 0;\n/*        position: fixed;*/\n        background-color: lightgreen;\n/*        border: 1px green;*/\n        width: auto;\n        max-height: 6em;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar[data-v-21720cd0] {\n        flex: 1;\n        border-radius: 0px;\n        top: 0;\n        left: 0;\n        right: 0;\n/*        position: fixed;*/\n        background-color: lightgreen;\n/*        border: 1px green;*/\n        width: auto;\n        max-height: 6em;\n}\n.navbar__logo[data-v-21720cd0] {\n        margin: 1.5em;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28975,9 +28989,20 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "footer" })
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "footer" }, [
+      _c("div", { staticClass: "footer__information" }, [
+        _c("h1", [_vm._v("Some information!")]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -29000,7 +29025,20 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "navbar" })
+  return _c("div", { staticClass: "navbar" }, [
+    _c(
+      "div",
+      {
+        staticClass: "navbar__logo",
+        on: {
+          click: function ($event) {
+            return _vm.goHome()
+          },
+        },
+      },
+      [_c("h1", [_vm._v("Recipes!")])]
+    ),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
