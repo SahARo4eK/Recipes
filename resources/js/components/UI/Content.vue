@@ -13,7 +13,7 @@
 <style scoped> 
     .content {
         flex: 1;
-        background-color: lightslategrey;
+        background-color: #F5FFDF;
         height: 100%;
         min-height: 150px;
         min-width: 200px;

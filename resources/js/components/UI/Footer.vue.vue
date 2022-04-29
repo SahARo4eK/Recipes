@@ -14,8 +14,8 @@
 <style scoped>
     .footer {
         flex: 1;
-        max-height: 6em;
-        background-color: lightsalmon;
+        max-height: 100px;
+        background-color: #BCF2B3;
     }
     .footer__information {
         margin: 1.5em;

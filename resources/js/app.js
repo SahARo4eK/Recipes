@@ -23,6 +23,9 @@ window.Vue = require('vue').default;
  Vue.component('navbar-vue', require('./components/UI/Navbar.vue').default);
  Vue.component('content-vue', require('./components/UI/Content.vue').default);
  Vue.component('footer-vue', require('./components/UI/Footer.vue').default);
+ Vue.component('navbar-search', require('./components/UI/NavbarSearch.vue').default);
+ Vue.component('navbar-link-button', require('./components/UI/NavbarLinkButton.vue').default);
+ //Vue.component('navbar-new-recipe', require('./components/UI/NavbarNewRecipe.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
