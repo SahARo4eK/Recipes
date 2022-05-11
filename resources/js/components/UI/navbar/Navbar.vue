@@ -48,6 +48,7 @@ import NavbarSearch from "./components/UI/NavbarSearch.vue";
         display: inline-flex;
         margin: 1.5em;
         max-width: 10em;
+        cursor: pointer;
     }
     .navbar__controls {
         display: inline-flex;

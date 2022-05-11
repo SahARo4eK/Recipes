@@ -40,6 +40,10 @@
         box-sizing: border-box;
         text-align: center;
     }
+    .controls__button:hover {
+        cursor: pointer;
+        border: 10px;
+    }
     .text {
          width: 100%;
         position: relative;

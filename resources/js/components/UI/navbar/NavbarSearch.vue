@@ -1,9 +1,5 @@
 <template>
-    <div class="controls__search">
-        <div class="text">
-            search
-        </div>
-    </div>
+        <input type="text" placeholder="Search" class="controls__search">
 </template>
 
 <script>
@@ -19,6 +15,7 @@
         max-width: 300px;
         width: 360px;
         top: 1em;
+        padding-left: 5px;
         margin-left: auto;
         margin-bottom: 30px;
         margin-top: 30px;

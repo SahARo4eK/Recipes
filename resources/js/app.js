@@ -19,12 +19,12 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
- Vue.component('button-test', require('./components/Button.vue').default);
- Vue.component('navbar-vue', require('./components/UI/Navbar.vue').default);
- Vue.component('content-vue', require('./components/UI/Content.vue').default);
- Vue.component('footer-vue', require('./components/UI/Footer.vue').default);
- Vue.component('navbar-search', require('./components/UI/NavbarSearch.vue').default);
- Vue.component('navbar-link-button', require('./components/UI/NavbarLinkButton.vue').default);
+ Vue.component('button-test', require('./components/UI/Button.vue').default);
+ Vue.component('navbar-vue', require('./components/UI/navbar/Navbar.vue').default);
+ Vue.component('content-vue', require('./components/UI/content/Content.vue').default);
+ Vue.component('footer-vue', require('./components/UI/footer/Footer.vue').default);
+ Vue.component('navbar-search', require('./components/UI/navbar/NavbarSearch.vue').default);
+ Vue.component('navbar-link-button', require('./components/UI/navbar/NavbarLinkButton.vue').default);
  //Vue.component('navbar-new-recipe', require('./components/UI/NavbarNewRecipe.vue').default);
 
 /**
