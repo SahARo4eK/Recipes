@@ -5,20 +5,22 @@
             <h1>Recipes!</h1>
         </div>
         <div class="navbar__controls">
-            <navbar-search/>
-            <navbar-link-button name="Избранное" link="favorite"/>
-            <navbar-link-button name="Новый рецепт" link="new-recipe"/>
+            <NavbarSearch/>
+            <NavbarLinkButton name="Избранное" link="favorite"/>
+            <NavbarLinkButton name="Новый рецепт" link="new-recipe"/>
         </div>
     </div>
 </template>
 
-import NavbarSearch from "./components/UI/NavbarSearch.vue";
+
 
 <script>
+    import NavbarSearch from "./NavbarSearch.vue";
+    import NavbarLinkButton from "./NavbarLinkButton.vue";
     export default {
-//        components: {
-//            NavbarSearch
-//        },
+        components: {
+            NavbarSearch, NavbarLinkButton
+        },
         data(){
             return{}
         },
@@ -38,9 +40,7 @@ import NavbarSearch from "./components/UI/NavbarSearch.vue";
         top: 0;
         left: 0;
         right: 0;
-/*        position: fixed;*/
         background-color: #BCF2B3;
-/*        border: 1px green;*/
         width: auto;
         max-height: 100px;
     }

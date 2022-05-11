@@ -15,8 +15,7 @@
         },
         data() {
             return{
-                name: '',
-                link: 'link'
+                
             }
         },
         methods: {

@@ -1,45 +1,45 @@
 <template>
-    <div class="button">
-            <button class="button__link btn btn-secondary align-middle"
-                    @click="goToTest()">
-                Go to "Test" page
-            </button>
+    <div class="second-button">
+        {{text}}
     </div>
 </template>
 
 <script>
     export default {
+        props: {
+            text: String
+        },
         data() {
             return {
-                testLink: 'test'
-            };
-        },
-        Methods: {
-            goToTest() {
-                window.location.href = "test";
+                
             }
+        },
+        methods: {
         }
     }
 </script>
+
 <style scoped>
-.button__link {
-    margin-top: 100px;
-    margin-left: 40px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50; /* Green */
-    transition-duration: 0.4s;
-}
-
-.button__link:hover {
-    cursor: pointer;
-    border: 5px;
-}
-
-.button__link:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    background-color: #4CAF50; /* Green */
-    color: white;
-}
+    .controls__button {
+        width: 147px;
+        height: 46px;
+        margin-left: auto;
+        margin-bottom: 30px;
+        margin-top: 25px;
+        margin-right: 25px;
+        background: #527E36;
+        border: 2px solid #25BA61;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .controls__button:hover {
+        cursor: pointer;
+        border: 10px;
+    }
+    .text {
+         width: 100%;
+        position: relative;
+        top: 25%;
+        left: 0%;
+    }
 </style>
