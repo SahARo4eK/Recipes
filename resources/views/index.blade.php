@@ -24,5 +24,6 @@
         flex-flow: column;
         height: 100vh;
         width: 100%;
+        overflow: auto;
     }
 </style>

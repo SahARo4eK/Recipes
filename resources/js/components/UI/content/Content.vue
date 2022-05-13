@@ -1,13 +1,15 @@
 <template>
     <div class="content">
         <div class="content__sort">
-            <ContentItem/>
-            <ContentItem/>
+            <ContentItem className="sort__item"/>
+            <ContentItem className="sort__item" />
         </div>
         <div class="content__items">
-            <ContentItem/>
-            <ContentItem/>
-            <ContentItem/>
+            <ContentItem className="items__recipe"/>
+            <ContentItem className="items__recipe"/>
+            <ContentItem className="items__recipe"/>
+            <ContentItem className="items__recipe"/>
+            <ContentItem className="items__recipe"/>
         </div>
     </div>
 </template>
@@ -24,24 +26,29 @@
 
 <style scoped> 
     .content {
-        display: flex;
+        flex: 1 0 auto;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
         background-color: #F5FFDF;
-        height: 100%;
-        min-height: 150px;
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
         min-width: 200px;
+        
     }
     .content__sort {
+        margin-top: 25px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        min-height: 200px;
-        min-width: 1024px;
-        max-width: 1024px;
+        min-height: 150px;
     }
     .content__items {
-            
+        display: flex;
+        margin-top: 25px;
+        flex-direction: column;
+        justify-content: flex-start;
+        justify-content: center;
     }
 </style>

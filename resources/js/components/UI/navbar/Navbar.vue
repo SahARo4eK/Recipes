@@ -34,15 +34,14 @@
 
 <style> 
     .navbar {
-        flex: 1;
         display: inline-flex;
         border-radius: 0px;
         top: 0;
         left: 0;
         right: 0;
         background-color: #BCF2B3;
-        width: auto;
-        max-height: 100px;
+        width: 100%;
+        height: auto;
     }
     .navbar__logo {
         display: inline-flex;

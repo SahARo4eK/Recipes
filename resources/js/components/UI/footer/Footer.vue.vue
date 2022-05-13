@@ -13,7 +13,7 @@
 
 <style scoped>
     .footer {
-        flex: 1;
+        display: flex;
         max-height: 100px;
         background-color: #BCF2B3;
     }
