@@ -1,15 +1,19 @@
 <template>
     <div class="content">
         <div class="content__sort">
-            <ContentItem className="sort__item"/>
-            <ContentItem className="sort__item" />
+            <div class="sort__container">
+                <ContentItem className="sort__item"/>
+                <ContentItem className="sort__item" />
+            </div>
         </div>
         <div class="content__items">
-            <ContentItem className="items__recipe"/>
-            <ContentItem className="items__recipe"/>
-            <ContentItem className="items__recipe"/>
-            <ContentItem className="items__recipe"/>
-            <ContentItem className="items__recipe"/>
+            <div class="items__container">
+                <ContentItem className="items__recipe"/>
+                <ContentItem className="items__recipe"/>
+                <ContentItem className="items__recipe"/>
+                <ContentItem className="items__recipe"/>
+                <ContentItem className="items__recipe"/>
+            </div>
         </div>
     </div>
 </template>
@@ -25,11 +29,12 @@
 </script>
 
 <style scoped> 
+    * {
+        display: flex;
+        justify-content: center;
+    }
     .content {
-        flex: 1 0 auto;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
         background-color: #F5FFDF;
         height: auto;
         width: 100%;
@@ -38,17 +43,17 @@
         
     }
     .content__sort {
+        flex-direction: row;
         margin-top: 25px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
         min-height: 150px;
     }
     .content__items {
-        display: flex;
+        flex-direction: row;
         margin-top: 25px;
-        flex-direction: column;
-        justify-content: flex-start;
-        justify-content: center;
+        min-height: 150px;
     }
+    .sort__container, .items__container  {
+        flex-direction: column;
+        width: 1024px;
+    } 
 </style>

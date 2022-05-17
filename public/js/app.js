@@ -5385,6 +5385,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -10670,7 +10674,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.content[data-v-15db2cd3] {\n    flex: 1 0 auto;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    background-color: #F5FFDF;\n    height: auto;\n    width: 100%;\n    margin: 0 auto;\n    min-width: 200px;\n}\n.content__sort[data-v-15db2cd3] {\n    margin-top: 25px;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    min-height: 150px;\n}\n.content__items[data-v-15db2cd3] {\n    display: flex;\n    margin-top: 25px;\n    flex-direction: column;\n    justify-content: flex-start;\n    justify-content: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n*[data-v-15db2cd3] {\n    display: flex;\n    justify-content: center;\n}\n.content[data-v-15db2cd3] {\n    flex-direction: column;\n    background-color: #F5FFDF;\n    height: auto;\n    width: 100%;\n    margin: 0 auto;\n    min-width: 200px;\n}\n.content__sort[data-v-15db2cd3] {\n    flex-direction: row;\n    margin-top: 25px;\n    min-height: 150px;\n}\n.content__items[data-v-15db2cd3] {\n    flex-direction: row;\n    margin-top: 25px;\n    min-height: 150px;\n}\n.sort__container[data-v-15db2cd3], .items__container[data-v-15db2cd3]  {\n    flex-direction: column;\n    width: 1024px;\n} \n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -10694,7 +10698,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sort__item[data-v-cfa095f4] {\n    background-color: #F50000;\n    display: flex;/* Раз */\n    flex-direction: column;/*Два*/\n    height: 100px;\n    margin: 15px;\n    max-height: 200px;\n    border-radius: 42px;\n}\n.items__recipe[data-v-cfa095f4] {\n    background-color: #F50000;\n    height: auto; \n    display: flex;/* Раз */\n    flex-direction: column;/*Два*/\n    min-height: 400px;\n    margin: 15px;\n    max-height: 200px;\n    border-radius: 42px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n*[data-v-cfa095f4] {\n    background-color: #F50000;\n    margin: 15px;\n    border-radius: 42px;\n    max-width: 1024px;\n}\n.sort__item[data-v-cfa095f4] {\n    height: 100px;\n    min-height: 100px;\n}\n.items__recipe[data-v-cfa095f4] {\n    height: auto; \n    min-height: 400px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29290,33 +29294,37 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "content" }, [
-    _c(
-      "div",
-      { staticClass: "content__sort" },
-      [
-        _c("ContentItem", { attrs: { className: "sort__item" } }),
-        _vm._v(" "),
-        _c("ContentItem", { attrs: { className: "sort__item" } }),
-      ],
-      1
-    ),
+    _c("div", { staticClass: "content__sort" }, [
+      _c(
+        "div",
+        { staticClass: "sort__container" },
+        [
+          _c("ContentItem", { attrs: { className: "sort__item" } }),
+          _vm._v(" "),
+          _c("ContentItem", { attrs: { className: "sort__item" } }),
+        ],
+        1
+      ),
+    ]),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "content__items" },
-      [
-        _c("ContentItem", { attrs: { className: "items__recipe" } }),
-        _vm._v(" "),
-        _c("ContentItem", { attrs: { className: "items__recipe" } }),
-        _vm._v(" "),
-        _c("ContentItem", { attrs: { className: "items__recipe" } }),
-        _vm._v(" "),
-        _c("ContentItem", { attrs: { className: "items__recipe" } }),
-        _vm._v(" "),
-        _c("ContentItem", { attrs: { className: "items__recipe" } }),
-      ],
-      1
-    ),
+    _c("div", { staticClass: "content__items" }, [
+      _c(
+        "div",
+        { staticClass: "items__container" },
+        [
+          _c("ContentItem", { attrs: { className: "items__recipe" } }),
+          _vm._v(" "),
+          _c("ContentItem", { attrs: { className: "items__recipe" } }),
+          _vm._v(" "),
+          _c("ContentItem", { attrs: { className: "items__recipe" } }),
+          _vm._v(" "),
+          _c("ContentItem", { attrs: { className: "items__recipe" } }),
+          _vm._v(" "),
+          _c("ContentItem", { attrs: { className: "items__recipe" } }),
+        ],
+        1
+      ),
+    ]),
   ])
 }
 var staticRenderFns = []
