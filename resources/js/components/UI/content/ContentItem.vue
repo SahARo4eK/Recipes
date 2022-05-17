@@ -1,13 +1,14 @@
 <template>
     <div :class="className">
-        
+        <p v-if="recipe">{{recipe.title}}</p>
     </div>
 </template>
 
 <script>
     export default {
         props: {
-            className: String
+            className: String,
+            recipe: Object
         },
         data() {
             return {
@@ -18,7 +19,7 @@
 
 <style scoped> 
     * {
-        background-color: #F50000;
+        background-color: #7fbd4f;
         margin: 15px;
         border-radius: 42px;
         max-width: 1024px;

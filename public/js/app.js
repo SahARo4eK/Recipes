@@ -5385,12 +5385,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      recipes: [{
+        title: "Плов"
+      }, {
+        title: "Окрошка"
+      }, {
+        title: "Оливье"
+      }]
+    };
+  },
   components: {
     ContentItem: _ContentItem_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
@@ -5417,7 +5424,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
-    className: String
+    className: String,
+    recipe: Object
   },
   data: function data() {
     return {};
@@ -10698,7 +10706,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n*[data-v-cfa095f4] {\n    background-color: #F50000;\n    margin: 15px;\n    border-radius: 42px;\n    max-width: 1024px;\n}\n.sort__item[data-v-cfa095f4] {\n    height: 100px;\n    min-height: 100px;\n}\n.items__recipe[data-v-cfa095f4] {\n    height: auto; \n    min-height: 400px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n*[data-v-cfa095f4] {\n    background-color: #7fbd4f;\n    margin: 15px;\n    border-radius: 42px;\n    max-width: 1024px;\n}\n.sort__item[data-v-cfa095f4] {\n    height: 100px;\n    min-height: 100px;\n}\n.items__recipe[data-v-cfa095f4] {\n    height: auto; \n    min-height: 400px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29311,17 +29319,12 @@ var render = function () {
       _c(
         "div",
         { staticClass: "items__container" },
-        [
-          _c("ContentItem", { attrs: { className: "items__recipe" } }),
-          _vm._v(" "),
-          _c("ContentItem", { attrs: { className: "items__recipe" } }),
-          _vm._v(" "),
-          _c("ContentItem", { attrs: { className: "items__recipe" } }),
-          _vm._v(" "),
-          _c("ContentItem", { attrs: { className: "items__recipe" } }),
-          _vm._v(" "),
-          _c("ContentItem", { attrs: { className: "items__recipe" } }),
-        ],
+        _vm._l(_vm.recipes, function (recipe) {
+          return _c("ContentItem", {
+            key: _vm.title,
+            attrs: { className: "items__recipe", recipe: recipe },
+          })
+        }),
         1
       ),
     ]),
@@ -29350,7 +29353,9 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { class: _vm.className })
+  return _c("div", { class: _vm.className }, [
+    _vm.recipe ? _c("p", [_vm._v(_vm._s(_vm.recipe.title))]) : _vm._e(),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

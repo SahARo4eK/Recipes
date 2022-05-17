@@ -8,11 +8,7 @@
         </div>
         <div class="content__items">
             <div class="items__container">
-                <ContentItem className="items__recipe"/>
-                <ContentItem className="items__recipe"/>
-                <ContentItem className="items__recipe"/>
-                <ContentItem className="items__recipe"/>
-                <ContentItem className="items__recipe"/>
+                <ContentItem v-for="recipe in recipes" :key="title"  className="items__recipe" :recipe="recipe"/>
             </div>
         </div>
     </div>
@@ -22,6 +18,15 @@
     import ContentItem from "./ContentItem.vue";
             
     export default {
+        data() {
+          return {
+              recipes: [
+                  {title: "Плов"},
+                  {title: "Окрошка"},
+                  {title: "Оливье"}
+              ]
+          }  
+        },
         components: {
             ContentItem 
         },
