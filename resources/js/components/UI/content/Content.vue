@@ -2,13 +2,18 @@
     <div class="content">
         <div class="content__sort">
             <div class="sort__container">
-                <ContentItem className="sort__item"/>
+                <ContentItem className="sort__item"
+                             :type="'tags'"/>
                 <ContentItem className="sort__item" />
             </div>
         </div>
         <div class="content__items">
             <div class="items__container">
-                <ContentItem v-for="recipe in recipes" :key="title"  className="items__recipe" :recipe="recipe"/>
+                <ContentItem v-for="recipe in recipes" 
+                             :key="recipe.title"  
+                             className="items__recipe" 
+                             :type="'recipe'"
+                             :recipe="recipe"/>
             </div>
         </div>
     </div>
@@ -18,18 +23,26 @@
     import ContentItem from "./ContentItem.vue";
             
     export default {
-        data() {
-          return {
-              recipes: [
-                  {title: "Плов"},
-                  {title: "Окрошка"},
-                  {title: "Оливье"}
-              ]
-          }  
-        },
         components: {
             ContentItem 
         },
+        data() {
+          return {
+              searchText: "",
+              recipes: [
+                  {title: "Плов", ingridients: "Рис, мясо, морковка", tags:"tag_122, tag_2"},
+                  {title: "Окрошка", tags:"tag_122"},
+                  {title: "Оливье", tags:"tag_2"},
+                  {title: "Просто вкусное блюдо"}
+              ]
+          }  
+        },
+        methods: {
+        },
+        computed: {
+            
+        }
+         
     }
 </script>
 

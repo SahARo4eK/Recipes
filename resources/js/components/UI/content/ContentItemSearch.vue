@@ -2,17 +2,23 @@
     <input type="text" 
            placeholder="Search" 
            class="controls__search" 
-           v-model="text" >
+           v-model="searchText"
+           @keyup='texting'>
 </template>
 
 <script>
     export default {
+        props: {
+        },
         data() {
             return{
-                text: ""
+                searchText: ''
             }
         },
         methods: {
+            texting () {
+                this.$emit('texting', this.searchText)
+            }
         }
     }
 </script>
@@ -21,6 +27,7 @@
     .controls__search {
         max-width: 300px;
         width: 360px;
+        height: 70px;
         top: 1em;
         padding-left: 5px;
         margin-left: auto;
