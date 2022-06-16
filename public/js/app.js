@@ -5390,6 +5390,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -5410,10 +5412,16 @@ __webpack_require__.r(__webpack_exports__);
         tags: "tag_2"
       }, {
         title: "Просто вкусное блюдо"
-      }]
+      }],
+      activeTags: []
     };
   },
-  methods: {},
+  methods: {
+    onChooseTag: function onChooseTag(tag) {
+      var tags = this.activeTags;
+      if (!tags.includes(tag)) this.activeTags.push(tag);
+    }
+  },
   computed: {}
 });
 
@@ -5456,6 +5464,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5466,18 +5475,21 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     className: String,
     type: String,
-    recipe: Object
+    recipe: Object,
+    activeTags: Array
   },
   data: function data() {
     return {
       tags: ['tag_122', 'tag_2', 'быстро', 'рис'],
-      activeTags: ['tag1', 'tag2'],
       inputText: ''
     };
   },
   methods: {
     onTexting: function onTexting(text) {
       this.inputText = text;
+    },
+    onChooseTag: function onChooseTag(tag) {
+      this.$emit('chooseTag', tag);
     }
   }
 });
@@ -5536,12 +5548,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     tagName: String
   },
   data: function data() {
     return {};
+  },
+  methods: {
+    chooseTag: function chooseTag() {
+      this.$emit('chooseTag', this.tagName);
+    }
   }
 });
 
@@ -29710,9 +29730,12 @@ var render = function () {
         [
           _c("ContentItem", {
             attrs: { className: "sort__item", type: "tags" },
+            on: { chooseTag: _vm.onChooseTag },
           }),
           _vm._v(" "),
-          _c("ContentItem", { attrs: { className: "sort__item" } }),
+          _c("ContentItem", {
+            attrs: { className: "sort__item", activeTags: _vm.activeTags },
+          }),
         ],
         1
       ),
@@ -29768,25 +29791,33 @@ var render = function () {
           _c("p", [_vm._v(_vm._s(_vm.recipe.ingridients))]),
         ])
       : _vm.type === "tags"
-      ? _c("div", { staticClass: "item__search" }, [
-          _c(
-            "div",
-            { staticClass: "search__input" },
-            [_c("ContentItemSearch", { on: { texting: _vm.onTexting } })],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "item__tags" },
-            [
-              _c("ContentItemTag", { attrs: { tagName: "Tag_122" } }),
-              _vm._v(" "),
-              _c("ContentItemTag", { attrs: { tagName: "Tag_2" } }),
-            ],
-            1
-          ),
-        ])
+      ? _c(
+          "div",
+          { staticClass: "item__search" },
+          [
+            _c(
+              "div",
+              { staticClass: "search__input" },
+              [_c("ContentItemSearch", { on: { texting: _vm.onTexting } })],
+              1
+            ),
+            _vm._v(" "),
+            _vm._l(_vm.tags, function (tag) {
+              return _c(
+                "div",
+                { staticClass: "item__tags" },
+                [
+                  _c("ContentItemTag", {
+                    attrs: { tagName: tag },
+                    on: { chooseTag: _vm.onChooseTag },
+                  }),
+                ],
+                1
+              )
+            }),
+          ],
+          2
+        )
       : _c(
           "div",
           { staticClass: "search__input" },
@@ -29872,7 +29903,9 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "item__tag" }, [
-    _c("div", { staticClass: "tag__text" }, [_vm._v(_vm._s(_vm.tagName))]),
+    _c("div", { staticClass: "tag__text", on: { click: _vm.chooseTag } }, [
+      _vm._v("\n        " + _vm._s(_vm.tagName) + "\n    "),
+    ]),
   ])
 }
 var staticRenderFns = []

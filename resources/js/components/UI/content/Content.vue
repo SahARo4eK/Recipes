@@ -3,8 +3,10 @@
         <div class="content__sort">
             <div class="sort__container">
                 <ContentItem className="sort__item"
-                             :type="'tags'"/>
-                <ContentItem className="sort__item" />
+                             :type="'tags'"
+                             @chooseTag="onChooseTag"/>
+                <ContentItem className="sort__item"
+                             :activeTags="activeTags"/>
             </div>
         </div>
         <div class="content__items">
@@ -34,10 +36,16 @@
                   {title: "Окрошка", tags:"tag_122"},
                   {title: "Оливье", tags:"tag_2"},
                   {title: "Просто вкусное блюдо"}
-              ]
+              ],
+              activeTags: []
           }  
         },
         methods: {
+            onChooseTag (tag) {
+                const tags = this.activeTags;
+                if(!tags.includes(tag))
+                    this.activeTags.push(tag);
+            },
         },
         computed: {
             

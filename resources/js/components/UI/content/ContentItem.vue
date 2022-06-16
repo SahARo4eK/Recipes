@@ -8,9 +8,10 @@
             <div class="search__input">
                 <ContentItemSearch @texting='onTexting'/>
             </div>
-            <div class="item__tags">
-                <ContentItemTag tagName="Tag_122"/>
-                <ContentItemTag tagName="Tag_2"/>
+            <div class="item__tags"
+                 v-for="tag in tags">
+                <ContentItemTag :tagName="tag"
+                                @chooseTag="onChooseTag"/>
             </div>
         </div>
         <div v-else class="search__input">
@@ -32,18 +33,21 @@
         props: {
             className: String,
             type: String,
-            recipe: Object
+            recipe: Object,
+            activeTags: Array
         },
         data() {
             return {
                 tags: ['tag_122', 'tag_2', 'быстро', 'рис'],
-                activeTags: ['tag1', 'tag2'],
                 inputText: ''
             }
         },
         methods: {
             onTexting (text) {
                 this.inputText = text;
+            },
+            onChooseTag (tag) {
+                this.$emit('chooseTag', tag);
             }
         }
     }

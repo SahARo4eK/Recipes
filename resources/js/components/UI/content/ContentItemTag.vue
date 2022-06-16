@@ -1,6 +1,9 @@
 <template>
     <div class="item__tag">
-        <div class="tag__text">{{tagName}}</div>
+        <div class="tag__text"
+             @click="chooseTag">
+            {{tagName}}
+        </div>
     </div>
 </template>
 
@@ -11,6 +14,11 @@
         },
         data() {
             return {
+            }
+        },
+        methods: {
+            chooseTag() {
+                this.$emit('chooseTag', this.tagName);
             }
         }
     }
