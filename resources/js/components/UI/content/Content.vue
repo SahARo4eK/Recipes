@@ -32,9 +32,9 @@
           return {
               searchText: "",
               recipes: [
-                  {title: "Плов", ingridients: "Рис, мясо, морковка", tags:"tag_122, tag_2"},
-                  {title: "Окрошка", tags:"tag_122"},
-                  {title: "Оливье", tags:"tag_2"},
+                  {title: "Плов", ingridients: "Рис, мясо, морковка", tags: ["tag_122", "tag_2"]},
+                  {title: "Окрошка", tags:["tag_122"]},
+                  {title: "Оливье", tags:["tag_2"]},
                   {title: "Просто вкусное блюдо"}
               ],
               activeTags: []

@@ -5403,13 +5403,13 @@ __webpack_require__.r(__webpack_exports__);
       recipes: [{
         title: "Плов",
         ingridients: "Рис, мясо, морковка",
-        tags: "tag_122, tag_2"
+        tags: ["tag_122", "tag_2"]
       }, {
         title: "Окрошка",
-        tags: "tag_122"
+        tags: ["tag_122"]
       }, {
         title: "Оливье",
-        tags: "tag_2"
+        tags: ["tag_2"]
       }, {
         title: "Просто вкусное блюдо"
       }],
@@ -5465,6 +5465,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5480,7 +5483,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      tags: ['tag_122', 'tag_2', 'быстро', 'рис'],
+      allTags: ['tag_1wwwww22', 'taaag_2', 'быстро', 'риsс', 'hottting', 'namesSanay', 'hotting', 'hoting', 'hting'],
+      displayTags: ['tag_1wwwww22', 'taaag_2', 'быстро', 'риsс', 'hottting', 'namesSanay', 'hotting', 'hoting', 'hting'],
       inputText: ''
     };
   },
@@ -5490,6 +5494,13 @@ __webpack_require__.r(__webpack_exports__);
     },
     onChooseTag: function onChooseTag(tag) {
       this.$emit('chooseTag', tag);
+    },
+    match: function match() {
+      var inputText = this.inputText;
+      var allTags = this.allTags;
+      if (inputText === '') this.displayTags = allTags;else this.displayTags = allTags.filter(function (element) {
+        return element.slice(0, inputText.length).includes(inputText);
+      });
     }
   }
 });
@@ -10845,7 +10856,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n*[data-v-cfa095f4] {\n    background-color: #7fbd4f;\n    margin: 15px;\n    border-radius: 42px;\n    max-width: 1024px;\n}\n.sort__item[data-v-cfa095f4] {\n    height: 100px;\n    min-height: 100px;\n}\n.items__recipe[data-v-cfa095f4] {\n    height: auto; \n    min-height: 400px;\n}\n.item__search[data-v-cfa095f4] {\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n}\n.item__tags[data-v-cfa095f4] {\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n}\n.search__input[data-v-cfa095f4] {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    text-align: center;\n}\n.some_class[data-v-cfa095f4] {\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n*[data-v-cfa095f4] {\n        background-color: #7fbd4f;\n        margin: 15px;\n        border-radius: 42px;\n        max-width: 1024px;\n}\n.sort__item[data-v-cfa095f4] {\n        height: 100px;\n        min-height: 100px;\n}\n.sort__active-tag[data-v-cfa095f4] {\n        margin-left: 0px;\n}\n.item__active-tags[data-v-cfa095f4] {\n        display: flex;\n        flex-direction: row;\n        margin-right: auto;\n        width: 97%;\n        overflow-x: scroll;\n}\n.items__recipe[data-v-cfa095f4] {\n        height: auto; \n        min-height: 400px;\n}\n.item__search[data-v-cfa095f4] {\n        width: 97%;\n        display: flex;\n        flex-direction: row;\n        justify-content: center;\n}\n.item__tags[data-v-cfa095f4] {\n        display: flex;\n        flex-direction: row;\n        justify-content: flex-start;\n        margin: auto;\n        margin-left: 0px;\n        width: 60%;\n        overflow: hidden;\n        overflow-x: scroll;\n        border-radius: 20px;\n}\n.item__tag[data-v-cfa095f4] {\n        display: flex;\n        flex-direction: row;\n        justify-content: flex-start;\n        margin-left: 0px;\n}\n.search__input[data-v-cfa095f4] {\n        position: relative;\n/*        display: flex; */\n        /*justify-content: flex-start;*/\n        /*flex-direction: row;*/\n        /*align-items: center;*/\n        /*text-align: center;*/\n        /*margin-left: 0;*/\n        margin: auto;\n        margin-left: 20px;\n}\n    \n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -10869,7 +10880,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.controls__search[data-v-3524d84e] {\n    max-width: 300px;\n    width: 360px;\n    height: 70px;\n    top: 1em;\n    padding-left: 5px;\n    margin-left: auto;\n    margin-bottom: 30px;\n    margin-top: 30px;\n    margin-right: 25px;\n    max-height: 34px;\n    min-width: 60px;\n    border: 1px solid #000000;\n    box-sizing: border-box;\n    background: #F4FEEC;\n}\n.text[data-v-3524d84e] {\n    width: 75%;\n    position: relative;\n    top: 20%;\n    left: 5%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.controls__search[data-v-3524d84e] {\n        max-width: 300px;\n        width: 360px;\n        height: 70px;\n/*        top: 1em;*/\n        padding-left: 5px;\n/*        margin-left: auto;\n        margin-bottom: 30px;\n        margin-top: 30px;\n        margin-right: 25px;*/\n        max-height: 34px;\n        min-width: 60px;\n        border: 1px solid #000000;\n        box-sizing: border-box;\n        background: #F4FEEC;\n}\n.text[data-v-3524d84e] {\n        width: 75%;\n        position: relative;\n        top: 20%;\n        left: 5%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -10893,7 +10904,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.item__tag[data-v-65952838] {\n    display: flex;\n    background-color: #BCF2B3;\n    height: 40px;\n    margin-top: auto;\n    margin-right: 0px;\n    flex-direction: row;\n    align-items: center;\n    text-align: center;\n}\n.item__tag[data-v-65952838]:hover {\n    cursor: pointer;\n}\n.tag__text[data-v-65952838] {\n    padding-left: 10px;\n    padding-right: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.tag[data-v-65952838] {\n    display: flex;\n    background-color: #BCF2B3;\n    height: 40px;\n    margin-top: auto;\n    margin-right: 0px;\n    flex-direction: row;\n    align-items: center;\n    text-align: center;\n}\n.tag[data-v-65952838]:hover {\n    cursor: pointer;\n}\n.tag__text[data-v-65952838] {\n    padding-left: 10px;\n    padding-right: 10px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29791,21 +29802,21 @@ var render = function () {
           _c("p", [_vm._v(_vm._s(_vm.recipe.ingridients))]),
         ])
       : _vm.type === "tags"
-      ? _c(
-          "div",
-          { staticClass: "item__search" },
-          [
-            _c(
-              "div",
-              { staticClass: "search__input" },
-              [_c("ContentItemSearch", { on: { texting: _vm.onTexting } })],
-              1
-            ),
-            _vm._v(" "),
-            _vm._l(_vm.tags, function (tag) {
+      ? _c("div", { staticClass: "item__search" }, [
+          _c(
+            "div",
+            { staticClass: "search__input", on: { keyup: _vm.match } },
+            [_c("ContentItemSearch", { on: { texting: _vm.onTexting } })],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "item__tags" },
+            _vm._l(_vm.displayTags, function (tag) {
               return _c(
                 "div",
-                { staticClass: "item__tags" },
+                { staticClass: "item__tag" },
                 [
                   _c("ContentItemTag", {
                     attrs: { tagName: tag },
@@ -29815,16 +29826,16 @@ var render = function () {
                 1
               )
             }),
-          ],
-          2
-        )
+            0
+          ),
+        ])
       : _c(
           "div",
-          { staticClass: "search__input" },
+          { staticClass: "item__active-tags" },
           _vm._l(_vm.activeTags, function (tag) {
             return _c(
               "div",
-              { staticClass: "sort__active-tags" },
+              { staticClass: "sort__active-tag" },
               [_c("ContentItemTag", { attrs: { tagName: tag } })],
               1
             )
@@ -29902,7 +29913,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "item__tag" }, [
+  return _c("div", { staticClass: "tag" }, [
     _c("div", { staticClass: "tag__text", on: { click: _vm.chooseTag } }, [
       _vm._v("\n        " + _vm._s(_vm.tagName) + "\n    "),
     ]),

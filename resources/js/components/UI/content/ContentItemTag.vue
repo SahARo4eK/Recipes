@@ -1,5 +1,5 @@
 <template>
-    <div class="item__tag">
+    <div class="tag">
         <div class="tag__text"
              @click="chooseTag">
             {{tagName}}
@@ -25,7 +25,7 @@
 </script>
 
 <style scoped> 
-    .item__tag {
+    .tag {
         display: flex;
         background-color: #BCF2B3;
         height: 40px;
@@ -35,7 +35,7 @@
         align-items: center;
         text-align: center;
     }
-    .item__tag:hover {
+    .tag:hover {
         cursor: pointer;
     }
     .tag__text {
