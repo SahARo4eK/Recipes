@@ -4,23 +4,30 @@
             <p>{{recipe.title}}</p>
             <p>{{recipe.ingridients}}</p>
         </div>
+        
+        
         <div v-else-if="type === 'tags'" class="item__search">
-            <div class="search__input"
-                 @keyup='match'>
+            <div class="search__input">
                 <ContentItemSearch @texting='onTexting'/>
             </div>
             <div class="item__tags">
                  <div class="item__tag"
-                    v-for="tag in displayTags">
+                    v-for="tag in allTags">
                     <ContentItemTag :tagName="tag"
-                                 @chooseTag="onChooseTag"/>
+                                 :isClosing="false"
+                                 @chooseTag="onChooseTag"
+                                 v-if="true === match(tag)"/>
                 </div>
             </div>
         </div>
+        
+        
         <div v-else class="item__active-tags">
             <div class="sort__active-tag"
                  v-for="tag in activeTags">
-                <ContentItemTag :tagName="tag"/>
+                <ContentItemTag :tagName="tag"
+                                :isClosing="true"
+                                @closeTag="onClosingTag"/>
             </div>
         </div>
     </div>
@@ -41,8 +48,7 @@
         },
         data() {
             return {
-                allTags: ['tag_1wwwww22', 'taaag_2', 'быстро', 'риsс', 'hottting', 'namesSanay','hotting','hoting','hting'],
-                displayTags : ['tag_1wwwww22', 'taaag_2', 'быстро', 'риsс', 'hottting', 'namesSanay','hotting','hoting','hting'],
+                allTags: ['tag_122', 'tag_2', 'быстро', 'риsс', 'hottting', 'namesSanay','hotting','hoting','hting'],
                 inputText: ''
             }
         },
@@ -53,11 +59,16 @@
             onChooseTag (tag) {
                 this.$emit('chooseTag', tag);
             },
-            match () {
+            onClosingTag (tag) {
+                this.$emit('closeTag', tag);
+            },
+            match (tag) {
                 const inputText = this.inputText;
                 const allTags = this.allTags;
-                if(inputText === '') this.displayTags = allTags;
-                else this.displayTags = allTags.filter(element => element.slice(0,inputText.length).includes(inputText));
+                if(inputText === '') return true;
+                if(tag.slice(0, inputText.length).includes(inputText)) return true;
+                return false;
+                this.$emit('tagSorting', this.displayTags);
             }
         }
     }
@@ -70,10 +81,6 @@
         border-radius: 42px;
         max-width: 1024px;
     }
-    .sort__item {
-        height: 100px;
-        min-height: 100px;
-    }
     .sort__active-tag {
         margin-left: 0px; 
     }
@@ -83,10 +90,6 @@
         margin-right: auto;
         width: 97%;
         overflow-x: scroll;
-    }
-    .items__recipe {
-        height: auto; 
-        min-height: 400px;
     }
     .item__search {
         width: 97%;
